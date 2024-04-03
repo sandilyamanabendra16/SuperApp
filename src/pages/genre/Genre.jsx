@@ -1,77 +1,10 @@
 import react, {useEffect, useState} from "react";
 import styles from "./Genre.module.css";
-import actionBG from "../../assets/Action.png";
-import dramaBG from "../../assets/Drama.png";
-import romanceBG from "../../assets/Romance.png";
-import thrillerBG from "../../assets/Thriller.png";
-import westernBG from "../../assets/Western.png";
-import horrorBG from "../../assets/Horror.png";
-import fantasyBG from "../../assets/Fantasy.png";
-import musicBG from "../../assets/Music.png";
-import fictionBG from "../../assets/Fiction.png";
+
+import {genres} from "../../data/genres";
+import {bgcolor} from "../../data/bgcolor";
 
 function Genre(){
-    const [genres, setgenres]=useState([
-        {
-            title: "Action",
-            bgImg: actionBG
-        },
-        {
-            title: "Drama",
-            bgImg: dramaBG
-        },
-        {
-            title: "Romance",
-            bgImg: romanceBG
-        },
-        {
-            title: "Thriller",
-            bgImg: thrillerBG
-        },
-        {
-            title: "Western",
-            bgImg: westernBG
-        },
-        {
-            title: "Horror",
-            bgImg: horrorBG
-        },
-        {
-            title: "Fantasy",
-            bgImg: fantasyBG
-        },
-        {
-            title: "Music",
-            bgImg: musicBG
-        },
-        {
-            title: "Fiction",
-            bgImg: fictionBG
-        },
-    ])
-
-    const bgcolor=[
-        "#FF5209",
-        "#D7A4FF",
-        "#148A08",
-        "#84C2FF",
-        "#902500",
-        "#7358FF",
-        "#FF4ADE",
-        "#E61E32",
-        "#6CD061"];
-
-    // const color=[
-    //     "color1",
-    //     "color2",
-    //     "color3",
-    //     "color4",
-    //     "color5",
-    //     "color6",
-    //     "color7",
-    //     "color8",
-    //     "color9"
-    // ];
 
     const [selectedGenres, setSelectedGenres] = useState([]);
     const [warning, setwarning]=useState('');
@@ -89,8 +22,9 @@ function Genre(){
         const genres1=[selectedGenres];
         localStorage.setItem("genres1",JSON.stringify(genres1));
         console.log(JSON.parse(localStorage.getItem("genres1")));
+        console.log(JSON.parse(localStorage.getItem('currentUser')));
     },[selectedGenres])
-
+    
     const removeGenre=(index)=>{
         console.log(index)
         const newGenres=selectedGenres.filter((item)=>item !==index);

@@ -18,7 +18,7 @@ function handlesubmit(){
         return alert('Please enter all fields');
     }
     else{
-       const currentUser=[formdata.name, formdata.username, formdata.email, formdata.mobile ]
+       const currentUser={name: formdata.name, username: formdata.username, email: formdata.email, mobile: formdata.mobile }
         localStorage.setItem("currentUser" ,JSON.stringify(currentUser));
         console.log(JSON.parse(localStorage.getItem("currentUser")));
     }

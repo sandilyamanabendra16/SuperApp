@@ -1,0 +1,32 @@
+.userWidget{
+    display:flex;
+    flex-direction: row;
+}
+
+.userWidget img{
+    box-sizing: border-box;
+    margin: 50px 0 0px 50px;
+    height: 350px;
+}
+
+.userdetails{
+    margin: 50px;
+}
+
+.genreGrid{
+    /* flex-wrap:wrap; */
+    display: flex;
+    flex-wrap:wrap;
+    margin: 0 30px 30px 30px;
+}
+
+.pill{
+    height:50px;
+    width: 180px;
+    background-color: #9F94FF;
+    margin:20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:30px;
+}

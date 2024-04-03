@@ -1,54 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 .page1{
     display:flex;
     flex-direction: row;
     height:100vh;
     width:100vw;
+    font-family: "Roboto", sans-serif;
+
 }
 
 .left{
-    background-color: #5746EA;
-    width:70%;
-    height:60%;
-    color:white;
-    margin: 80px 0 30px 80px;
-    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    width:55%;
+    height:100%;
+    margin-right:80px;
     
 }
-.right1{
-    background-color: white;
-    width:30vw;
-    height:80%;
-    margin:80px;
-}
+
 .userWidget{
-    display:flex;
-    flex-direction: row;
-}
+    background-color: #5746EA;
+    width:100%;
+    height:52%;
+    color:white;
+    margin: 50px 0 50px 80px;
+    border-radius: 20px;
 
-.userWidget img{
-    box-sizing: border-box;
-    margin: 50px 0 50px 50px;
-    height: 400px;
-}
 
-.userdetails{
-    margin: 50px;
 }
-
-.genreGrid{
-    /* flex-wrap:wrap; */
-    display: flex;
-    flex-wrap:wrap;
-    margin: 0 50px 50px 50px
+.right1{
+    width:30%;
+    height:100%;
+    margin:50px 50px 0px 50px;
 }
-
-.pill{
-    height:50px;
-    width: 180px;
-    background-color: #9F94FF;
-    margin:20px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    border-radius:30px;
+.weather1{
+    width:100%;
+    height:30%;
+    margin-left:80px;
 }
