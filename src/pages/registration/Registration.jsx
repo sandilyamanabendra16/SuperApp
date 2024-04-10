@@ -18,53 +18,51 @@ function handlesubmit(){
         return alert('Please enter all fields');
     }
     else{
-        console.log('Name',formdata.name)
-        console.log('UserName', formdata.username)
-        console.log('Email', formdata.email)
-        console.log('Mobile', formdata.mobile)
-        console.log('Checked', formdata.checked)
+       const currentUser=[formdata.name, formdata.username, formdata.email, formdata.mobile ]
+        localStorage.setItem("currentUser" ,JSON.stringify(currentUser));
+        console.log(JSON.parse(localStorage.getItem("currentUser")));
     }
 }
 return <div className={styles.page}>
     <div className={styles.left}>
         <h1> Discover new things on Superapp</h1>
-        <img className={styles.bgimg} src={BgImg} alt='background'></img>
+        <img className={styles.bgImg} src={BgImg} alt='background'></img>
     </div>
-    <div className={styles.right}> 
+    <div className={styles.right}>  
     <div className={styles.form}>
 
         <h2>Super app</h2>
         <h3> Create your new account</h3>
         <div>
-        <input type='text' value={formdata.name} onChange={(e)=>{
+        <input className={styles.input1} type='text' value={formdata.name} onChange={(e)=>{
             setformdata({...formdata, name: e.target.value});
         }} placeholder='Name' /> 
         </div>
         <br/>
-        <input type='text' value={formdata.username} onChange={(e)=>{
+        <input className={styles.input1}  type='text' value={formdata.username} onChange={(e)=>{
             setformdata({...formdata, username: e.target.value})
         }} 
         placeholder="UserName" />
         <br/>
         <br/>
-        <input type='emai' value={formdata.email} onChange={(e)=>{
+        <input className={styles.input1}  type='emai' value={formdata.email} onChange={(e)=>{
             setformdata({...formdata, email: e.target.value})
         }} 
         placeholder='Email'/>
         <br/>
         <br/>
-        <input type='tel' value={formdata.mobile} onChange={(e)=>{
+        <input  className={styles.input1} type='tel' value={formdata.mobile} onChange={(e)=>{
             setformdata({...formdata, mobile: e.target.value})
         }} 
         placeholder="Mobile"/>
     </div>
-    <div>
+    <div className={styles.checkbox1}>
         <input type="checkbox" value={formdata.checked} onChange={(e)=>{
             setformdata({...formdata, checked: !formdata.checked})
         }}/>
         <label> Share my registration data with Superapp </label>
         <br/>
-        <button type='submit' onClick={handlesubmit}> SIGN UP </button>
+        <button className={styles.signup} type='submit' onClick={handlesubmit}> SIGN UP </button>
     </div>
     <div className={styles.footer}>
 
