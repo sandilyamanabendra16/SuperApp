@@ -4,11 +4,13 @@ import App from './App';
 import Genre from './pages/genre/Genre';
 import Dashboard from "./pages/dashboard/Dashboard";
 import Homepage from "./pages/homepage/Homepage";
+import Promotion from './pages/promotion/PromotionPage';
 
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+
 
 const router=createBrowserRouter([
   {
@@ -22,6 +24,9 @@ const router=createBrowserRouter([
   },
   {
     path:'/dashboard', element: <Dashboard/>
+  },
+  {
+    path:'/promotion', element: <Promotion/>
   },
 ]);
 

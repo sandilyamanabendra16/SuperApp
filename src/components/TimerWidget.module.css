@@ -2,6 +2,7 @@
     display: flex;
     height: 100%;
     width:100%;
+    border-radius: 30px;
     font: "DM Sans", sans-serif;
 }
 
@@ -11,6 +12,7 @@
     display:flex;
     justify-content: center;
     align-items: center;
+    border-radius: 30px;
 }
 
 .right2{
@@ -20,6 +22,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: 30px;
 }
 .row{
     display: flex;
@@ -51,7 +54,7 @@
     box-sizing: border-box;
     text-align: center;
     padding: 10px;
-    margin:10px;
+    margin-bottom:20px;
     border-radius: 30px;
     background-color: #FF6A6A;
 }
@@ -90,12 +93,13 @@
 }
 
 .circular{
-    height:90%;
+    height:80%;
     width:90%;
     border-radius: 50%;
     margin:20px;
     text-align: center;
     background-color:#181D37 ;
+    
 }
 
 .ring{
@@ -105,5 +109,6 @@
     height:90%;
     width:57%;
     border-radius: 50%;
-    background-color:#181D37 
+    background-color:#181D37;
+    box-shadow: 3px 3px 10px 3px #282828;
 }

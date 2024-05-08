@@ -4,17 +4,8 @@ import {genres} from "../data/genres";
 import userAvatar from "../assets/image 14.png";
 function UserWidget(){
     
-    const [user,setuser]=useState();
-    const [selectedgenre, setselectedgenre]=useState([]);
-
-
-    useEffect(()=>{
-        const user1=JSON.parse(localStorage.getItem('currentUser'));
-        setuser(user1);
-        setselectedgenre(JSON.parse(localStorage.getItem('genres1')));
-        console.log(user);
-    
-    },[])
+    const [user,setuser]=useState(JSON.parse(localStorage.getItem('currentUser')));
+    const [selectedgenre, setselectedgenre]=useState([JSON.parse(localStorage.getItem('genres'))]);
     
  return (
     <div className={styles.userWidget}> 
@@ -25,15 +16,16 @@ function UserWidget(){
                 <h2> {user.email}</h2>
                 <h2> {user.username}</h2>
             </div>
-     { selectedgenre.length >0 && (
-         <div > 
-                 {selectedgenre.map((genre,index)=> (
-                     <div className={styles.genreGrid} key={index}>
-                     {genre.map((n) => (
-                         <div className={styles.pill} key={n}>{genres[n].title}</div>
-                       ))}
+     { selectedgenre && (
+         <div className={styles.genreGridtemplate}> 
+                 
+                     <div className={styles.genreGrid}>
+                         {selectedgenre?.filter((_genre, index) => index < 4)?.map((genre)=>(
+                            genre.map((gen,i)=>
+                            <div key={i} className={styles.pill}>{genres[gen].title}</div>
+                            )))}
                        </div>
-                 ))}
+                 
          </div>
      )}
      </div>

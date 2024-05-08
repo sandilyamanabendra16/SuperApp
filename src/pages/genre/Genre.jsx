@@ -18,12 +18,10 @@ function Genre(){
         
     }
 
-    useEffect(()=>{
-        const genres1=[selectedGenres];
-        localStorage.setItem("genres1",JSON.stringify(genres1));
-        console.log(JSON.parse(localStorage.getItem("genres1")));
-        console.log(JSON.parse(localStorage.getItem('currentUser')));
-    },[selectedGenres])
+    // useEffect(()=>{
+        
+    //     console.log(JSON.parse(localStorage.getItem('currentUser')));
+    // },[selectedGenres])
     
     const removeGenre=(index)=>{
         console.log(index)
@@ -37,6 +35,9 @@ function Genre(){
         }
         else{
             setwarning('');
+            const genres2=selectedGenres;
+        localStorage.setItem("genres",JSON.stringify(genres2));
+        console.log(JSON.parse(localStorage.getItem("genres")));
         }
     }
     return <div className={styles.page}> 

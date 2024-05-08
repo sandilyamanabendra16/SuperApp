@@ -1,30 +1,39 @@
 .userWidget{
     display:flex;
     flex-direction: row;
+    height:100%;
+    width:80%;
 }
 
 .userWidget img{
     box-sizing: border-box;
-    margin: 50px 0 0px 50px;
-    height: 350px;
+    margin: 10% 0 0px 5%;
+    height: 80%;
+    width:25%;
 }
 
 .userdetails{
-    margin: 50px;
+    margin: 15% 0 0 10%;
+    font-size: 85%;
 }
 
+.genreGridtemplate{
+    height:50%;
+    width:100%;
+}
 .genreGrid{
     /* flex-wrap:wrap; */
     display: flex;
     flex-wrap:wrap;
-    margin: 0 30px 30px 30px;
+    height:30%;
+    width:100%;
 }
 
 .pill{
-    height:50px;
-    width: 180px;
+    height:35px;
+    width: 30%;
     background-color: #9F94FF;
-    margin:20px;
+    margin:3% 3% 3% 10%;
     display:flex;
     justify-content: center;
     align-items: center;

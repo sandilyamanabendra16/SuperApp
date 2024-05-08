@@ -9,12 +9,12 @@ import TimerWidget from "../../components/TimerWidget";
 function Dashboard(){
     return <div className={styles.dashboard}>
         
-        <div class={styles.div1}></div>
+        <div class={styles.div1}> <UserWidget/> </div>
         <div class={styles.div2}> <WeatherWidget/> </div>
         <div class={styles.div3}> <NotesWidget/> </div>
         <div class={styles.div4}> <TimerWidget/> </div>
         <div class={styles.div5}> 
-        {/* <NewsWidget/> */}
+        <NewsWidget/>
         </div>
 
     </div>
