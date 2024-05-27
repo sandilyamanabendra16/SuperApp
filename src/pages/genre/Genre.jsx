@@ -3,6 +3,7 @@ import styles from "./Genre.module.css";
 
 import {genres} from "../../data/genres";
 import {bgcolor} from "../../data/bgcolor";
+import {useNavigate} from "react-router-dom";
 
 function Genre(){
 
@@ -29,6 +30,7 @@ function Genre(){
         setSelectedGenres(newGenres);
     }
 
+    const navigate=useNavigate();
     const handlenext=()=>{
         if(selectedGenres.length<3){
             setwarning('🔺 Minimum 3 category required');
@@ -38,6 +40,7 @@ function Genre(){
             const genres2=selectedGenres;
         localStorage.setItem("genres",JSON.stringify(genres2));
         console.log(JSON.parse(localStorage.getItem("genres")));
+        navigate("/home");
         }
     }
     return <div className={styles.page}> 

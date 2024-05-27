@@ -5,8 +5,14 @@ import UserWidget from "../../components/UserWidget";
 import NewsWidget from "../../components/newsWidget";
 import NotesWidget from "../../components/NotesWidget";
 import TimerWidget from "../../components/TimerWidget";
+import {useNavigate} from "react-router-dom";
 
 function Dashboard(){
+    const navigate=useNavigate();
+    const handlenext=()=>{
+        navigate("/promotion");
+    }
+
     return <div className={styles.dashboard}>
         
         <div class={styles.div1}> <UserWidget/> </div>
@@ -16,7 +22,7 @@ function Dashboard(){
         <div class={styles.div5}> 
         <NewsWidget/>
         </div>
-
+        <button className={styles.nxtpage} onClick={handlenext}> Next Page</button>
     </div>
 }
 

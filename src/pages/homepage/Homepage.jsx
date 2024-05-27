@@ -3,6 +3,7 @@ import styles from "./Homepage.module.css";
 import NewsWdiget from "../../components/newsWidget";
 import WeatherWidget from "../../components/weatherWidget";
 import UserWidget from "../../components/UserWidget";
+import {useNavigate} from "react-router-dom";
 
 
 function Homepage(){
@@ -16,6 +17,10 @@ function Homepage(){
         console.log(selectedgenre.map((genre)=>genre))
     },[])
 
+    const navigate=useNavigate();
+    const handlenext=()=>{
+        navigate("/dashboard");
+    }
 return <div className={styles.page1}>
     <div className={styles.left}>
         <div className={styles.userWidget}>
@@ -29,6 +34,7 @@ return <div className={styles.page1}>
     <div className={styles.right1}>
          <NewsWdiget/>
     </div>
+    <button className={styles.nxtpage} onClick={handlenext}> Next Page</button>
 </div>
 }
 

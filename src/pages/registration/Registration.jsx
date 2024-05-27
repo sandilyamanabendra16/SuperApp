@@ -1,6 +1,7 @@
 import react, {useState} from "react";
 import BgImg from "../../assets/image 13.png"
 import styles from "./Registration.module.css"
+import {useNavigate} from "react-router-dom"
 
 function Registration(){
 const [formdata, setformdata]=useState(
@@ -12,7 +13,7 @@ const [formdata, setformdata]=useState(
         checked: false,
     }
 )
-
+const navigate=useNavigate();
 function handlesubmit(){
     if ( !formdata.name|| !formdata.username|| !formdata.email || !formdata.mobile || !formdata.checked){
         return alert('Please enter all fields');
@@ -21,6 +22,7 @@ function handlesubmit(){
        const currentUser={name: formdata.name, username: formdata.username, email: formdata.email, mobile: formdata.mobile }
         localStorage.setItem("currentUser" ,JSON.stringify(currentUser));
         console.log(JSON.parse(localStorage.getItem("currentUser")));
+        navigate("/genre");
     }
 }
 return <div className={styles.page}>
